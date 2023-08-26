@@ -1,5 +1,7 @@
 # ExcelCrudApp
 
+>_"Tolong sebelum melakukan perintah ng serve -o, harap menjalankan perintah npm install untuk menginstall dependensi. Terima kasih"
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.8.
 
 ## Development server
