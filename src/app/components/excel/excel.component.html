@@ -1,1 +1,42 @@
-<p>excel works!</p>
+<div class="container mt-5">
+    <h2>EXCEL CRUD Angular App</h2>
+    <div>
+        <form [formGroup]="excelForm" (ngSubmit)="addRow()">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" formControlName="name" class="form-control mt-1" required>
+          </div>
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" id="age" formControlName="age" class="form-control mt-1" required>
+          </div>
+          <button type="submit" [disabled]="excelForm.invalid" class="btn btn-primary mt-3">Tambah Data</button>
+        </form>
+    </div>
+
+    <table class="table mt-5">
+      <thead>
+        <tr>
+          <th>Employee ID</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of excelData; let i = index">
+          <td>{{ row.employeeId }}</td>
+          <td>{{ row.name }}</td>
+          <td>{{ row.age }}</td>
+          <td>
+            <button class="btn btn-warning me-3" (click)="editRow(row.employeeId)">Edit</button>
+            <button class="btn btn-danger" (click)="deleteRow(row.employeeId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button (click)="exportToExcel()" class="btn btn-success mt-3">Export to Excel</button>
+
+  </div>
+  
